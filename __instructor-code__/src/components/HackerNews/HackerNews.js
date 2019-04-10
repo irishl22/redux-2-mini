@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Card from './../shared/Card/Card';
 import Loading from './../shared/Loading/Loading';
-import { requestArticles } from './../../ducks/hackerNewsReducer'
-import { connect } from 'react-redux'
+import { requestArticles } from './../../ducks/hackerNewsReducer';
+import { connect } from 'react-redux';
 
 class HackerNews extends Component {
   componentDidMount() {
@@ -23,7 +23,9 @@ function mapStateToProps(reduxStoreState) {
   return reduxStoreState.hackerNews
 }
 
-export default connect(mapStateToProps, {requestArticles})(HackerNews);
+// this.props = {...this.props, ...reduxStoreState}
+
+export default connect(mapStateToProps, { requestArticles })(HackerNews);
 
 
 const styles = {
